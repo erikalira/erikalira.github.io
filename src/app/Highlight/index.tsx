@@ -25,7 +25,7 @@ export default function Highlight() {
     <div className="lg:flex m-4">
       <div className="w-full md:content-center m-4">
         <div className="md:flex text-4xl">
-          <div className="mr-4">Hello, I'm </div>
+          <div className="mr-4">Hello, I&apos;m </div>
           <div
             className={`text-yellow-400 transition-opacity duration-500 ${
               isVisible ? "opacity-100" : "opacity-0"
