@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Emoji from "../../../public/emoji.webp";
+import Emoji from "../../../../public/emoji.webp";
 import { useEffect, useState } from "react";
 
 export default function Highlight() {
-  const texts = ["Erika Lira", "Web Dev", "Data Scientist"];
+  const texts = ["Erika Lira", "Web Dev", "Data Science Student"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -15,11 +15,11 @@ export default function Highlight() {
       setTimeout(() => {
         setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setIsVisible(true);
-      }, 500); // Tempo da transição
+      }, 500);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
 
   return (
     <div className="lg:flex m-4">
@@ -44,6 +44,7 @@ export default function Highlight() {
         width={384}
         alt="Picture of the author"
         className="m-6"
+        priority
       ></Image>
     </div>
   );

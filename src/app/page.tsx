@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Menu from "./components/Menu";
-import Highlight from "./Highlight";
+import Highlight from "./components/Highlight";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 
