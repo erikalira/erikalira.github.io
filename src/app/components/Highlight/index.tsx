@@ -24,18 +24,17 @@ export default function Highlight() {
   return (
     <div className="lg:flex m-4">
       <div className="w-full md:content-center m-4">
-        <div className="md:flex text-4xl">
-          <div className="mr-4">Hello, I&apos;m </div>
+        <div className="md:flex text-4xl h-full">
+          <div className="mr-4 w-[50%] h-full place-content-center">
+            Hello, I&apos;m
+          </div>
           <div
-            className={`text-yellow-400 transition-opacity duration-500 ${
+            className={`text-yellow-400 place-content-center w-[50%] transition-opacity duration-500 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
             {texts[currentTextIndex]}
           </div>
-        </div>
-        <div className="bg-white rounded-full p-2 flex justify-center md:max-w-[250px] text-gray-500 my-4">
-          Download Resume
         </div>
       </div>
       <Image
