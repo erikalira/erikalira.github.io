@@ -22,7 +22,7 @@ export default function Highlight() {
   }, [texts.length]);
 
   return (
-    <div className="lg:flex m-4">
+    <div id="about" className="lg:flex m-4 pt-16">
       <div className="w-full md:content-center m-4">
         <div className="md:flex text-4xl h-full">
           <div className="mr-4 w-[50%] h-full place-content-center">
