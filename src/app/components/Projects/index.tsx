@@ -4,11 +4,19 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
+import crud from "../../../../public/projects/crud-produtos.png";
+import drum from "../../../../public/projects/drum-machine.png";
+import mario from "../../../../public/projects/mario.png";
+import quote from "../../../../public/projects/quote-machine.png";
+import paltier from "../../../../public/projects/paltier.png";
+import riddle from "../../../../public/projects/riddle-game.png";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./styles.css";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -28,83 +36,84 @@ export default function Projects() {
           className="mySwiper"
         >
           <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
+            <Link
+              href="https://erikalira.github.io/drum-machine/"
+              target="_blank"
+            >
+              <Image
+                src={drum}
+                loading="lazy"
+                alt="drum machine"
+                width={800}
+                height={800}
+              />
+            </Link>
             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-2.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
+            <Link
+              href="https://erikalira.github.io/quote-machine/"
+              target="_blank"
+            >
+              <Image
+                src={quote}
+                loading="lazy"
+                alt="quote machine"
+                width={800}
+                height={800}
+              />
+            </Link>
             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-3.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
+            <Link href="https://lilmario.netlify.app/" target="_blank">
+              <Image
+                src={mario}
+                loading="lazy"
+                alt="mario game"
+                width={800}
+                height={800}
+              />
+            </Link>
             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-4.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
+            <Link
+              href="https://erikalira.github.io/CRUDFullStack"
+              target="_blank"
+            >
+              <Image
+                src={crud}
+                loading="lazy"
+                alt="products crud fullstack"
+                width={800}
+                height={800}
+              />
+            </Link>
             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-5.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
+            <Link href="https://paltier.netlify.app/" target="_blank">
+              <Image
+                src={paltier}
+                loading="lazy"
+                alt="palworld tier list"
+                width={800}
+                height={800}
+              />
+            </Link>
             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-6.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-7.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-8.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
+            <Link href="https://amzriddle.netlify.app/" target="_blank">
+              <Image
+                src={riddle}
+                loading="lazy"
+                alt="riddle game"
+                width={800}
+                height={800}
+              />
+            </Link>
             <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </SwiperSlide>
         </Swiper>

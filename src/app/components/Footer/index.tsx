@@ -13,21 +13,28 @@ export default function Footer() {
         Contact
         <div className="flex gap-2 justify-center">
           <Link
+            target="_blank"
             href="https://www.linkedin.com/in/erikalira/"
             aria-label="LinkedIn"
           >
             <FaLinkedin />
           </Link>
-          <Link href="https://github.com/erikalira" aria-label="GitHub">
+          <Link
+            target="_blank"
+            href="https://github.com/erikalira"
+            aria-label="GitHub"
+          >
             <FaGithub />
           </Link>
           <Link
+            target="_blank"
             href="https://www.freecodecamp.org/erika"
             aria-label="FreeCodeCamp"
           >
             <FaFreeCodeCamp />
           </Link>
           <Link
+            target="_blank"
             href="https://open.spotify.com/user/12142197717"
             aria-label="Spotify"
           >
