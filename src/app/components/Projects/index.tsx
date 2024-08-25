@@ -67,6 +67,7 @@ export default function Projects() {
           loop={true}
           modules={[Pagination, Navigation]}
           className="mySwiper"
+          style={{ height: "600px" }}
         >
           {slidesData.map((slide, index) => (
             <SwiperSlide key={index}>
