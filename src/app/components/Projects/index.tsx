@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import "./styles.css";
+
 export default function Projects() {
   return (
     <div id="projects" className="pt-16">
@@ -19,13 +21,16 @@ export default function Projects() {
             clickable: true,
           }}
           navigation={true}
+          slidesPerView={"auto"}
+          centeredSlides={true}
+          loop={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper w-full"
+          className="mySwiper"
         >
           <SwiperSlide>
             <Image
               src="https://swiperjs.com/demos/images/nature-1.jpg"
-              loading="eager"
+              loading="lazy"
               alt="descricao"
               width={800}
               height={800}
@@ -95,16 +100,6 @@ export default function Projects() {
           <SwiperSlide>
             <Image
               src="https://swiperjs.com/demos/images/nature-8.jpg"
-              loading="lazy"
-              alt="descricao"
-              width={800}
-              height={800}
-            />
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://swiperjs.com/demos/images/nature-9.jpg"
               loading="lazy"
               alt="descricao"
               width={800}

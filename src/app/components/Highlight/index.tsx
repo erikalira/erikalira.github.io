@@ -22,14 +22,17 @@ export default function Highlight() {
   }, [texts.length]);
 
   return (
-    <div id="about" className="lg:flex m-4 pt-16">
-      <div className="w-full md:content-center m-4">
-        <div className="md:flex text-4xl h-full">
-          <div className="mr-4 w-[50%] h-full place-content-center">
+    <div
+      id="about"
+      className="flex flex-col lg:flex-row m-4 pt-16 lg:px-48 justify-between"
+    >
+      <div className="m-4 flex-1">
+        <div className="md:flex text-4xl h-full items-center">
+          <div className="mr-4 flex items-center min-w-[200px]">
             Hello, I&apos;m
           </div>
           <div
-            className={`text-yellow-400 place-content-center w-[50%] transition-opacity duration-500 ${
+            className={`text-[#ffc200] flex items-center min-h-[120px] min-w-[200px] transition-opacity duration-500 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -37,14 +40,16 @@ export default function Highlight() {
           </div>
         </div>
       </div>
-      <Image
-        src={Emoji}
-        height={384}
-        width={384}
-        alt="Picture of the author"
-        className="m-6"
-        priority
-      ></Image>
+      <div className="flex justify-center items-center flex-shrink-0">
+        <Image
+          src={Emoji}
+          height={384}
+          width={384}
+          alt="Picture of the author"
+          className="max-w-[512px] h-full"
+          priority
+        />
+      </div>
     </div>
   );
 }
