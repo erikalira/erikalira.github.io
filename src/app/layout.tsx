@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className} overflow-x-hidden>
-        <main className="flex min-h-screen flex-col items-center justify-between pt-20 bg-white dark:bg-gray-950 text-black dark:text-white">
-          <div className="z-10 w-full font-mono lg:flex lg:flex-col font-bold max-w-full">
+      <body className={inter.className}>
+        <main className="flex min-h-screen flex-col items-center pt-20 bg-white dark:bg-gray-950 text-black dark:text-white">
+          <div className="z-10 w-full font-mono lg:flex lg:flex-col font-bold  max-w-[1440px]">
             <Menu />
             {children}
           </div>
