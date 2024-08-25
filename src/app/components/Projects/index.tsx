@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
@@ -16,7 +17,39 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./styles.css";
-import Link from "next/link";
+
+const slidesData = [
+  {
+    href: "https://erikalira.github.io/drum-machine/",
+    src: drum,
+    alt: "drum machine",
+  },
+  {
+    href: "https://erikalira.github.io/quote-machine/",
+    src: quote,
+    alt: "quote machine",
+  },
+  {
+    href: "https://lilmario.netlify.app/",
+    src: mario,
+    alt: "mario game",
+  },
+  {
+    href: "https://erikalira.github.io/CRUDFullStack",
+    src: crud,
+    alt: "products crud fullstack",
+  },
+  {
+    href: "https://paltier.netlify.app/",
+    src: paltier,
+    alt: "palworld tier list",
+  },
+  {
+    href: "https://amzriddle.netlify.app/",
+    src: riddle,
+    alt: "riddle game",
+  },
+];
 
 export default function Projects() {
   return (
@@ -34,88 +67,22 @@ export default function Projects() {
           loop={true}
           modules={[Pagination, Navigation]}
           className="mySwiper"
+          style={{ height: "600px" }}
         >
-          <SwiperSlide>
-            <Link
-              href="https://erikalira.github.io/drum-machine/"
-              target="_blank"
-            >
-              <Image
-                src={drum}
-                loading="lazy"
-                alt="drum machine"
-                width={800}
-                height={800}
-              />
-            </Link>
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link
-              href="https://erikalira.github.io/quote-machine/"
-              target="_blank"
-            >
-              <Image
-                src={quote}
-                loading="lazy"
-                alt="quote machine"
-                width={800}
-                height={800}
-              />
-            </Link>
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link href="https://lilmario.netlify.app/" target="_blank">
-              <Image
-                src={mario}
-                loading="lazy"
-                alt="mario game"
-                width={800}
-                height={800}
-              />
-            </Link>
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link
-              href="https://erikalira.github.io/CRUDFullStack"
-              target="_blank"
-            >
-              <Image
-                src={crud}
-                loading="lazy"
-                alt="products crud fullstack"
-                width={800}
-                height={800}
-              />
-            </Link>
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link href="https://paltier.netlify.app/" target="_blank">
-              <Image
-                src={paltier}
-                loading="lazy"
-                alt="palworld tier list"
-                width={800}
-                height={800}
-              />
-            </Link>
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Link href="https://amzriddle.netlify.app/" target="_blank">
-              <Image
-                src={riddle}
-                loading="lazy"
-                alt="riddle game"
-                width={800}
-                height={800}
-              />
-            </Link>
-            <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </SwiperSlide>
+          {slidesData.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <Link href={slide.href} target="_blank">
+                <Image
+                  src={slide.src}
+                  loading="lazy"
+                  alt={slide.alt}
+                  width={800}
+                  height={800}
+                />
+              </Link>
+              <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
