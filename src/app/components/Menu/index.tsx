@@ -1,19 +1,38 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { LuUser2 } from "react-icons/lu";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
-export default function Menu() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const darkModeQuery = "(prefers-color-scheme: dark)";
 
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    setIsDarkMode(prefersDarkMode);
-  }, []);
+function subscribeToDarkMode(callback: () => void) {
+  const mediaQuery = window.matchMedia(darkModeQuery);
+
+  mediaQuery.addEventListener("change", callback);
+
+  return () => mediaQuery.removeEventListener("change", callback);
+}
+
+function getDarkModeSnapshot() {
+  return window.matchMedia(darkModeQuery).matches;
+}
+
+function getServerDarkModeSnapshot() {
+  return false;
+}
+
+export default function Menu() {
+  const prefersDarkMode = useSyncExternalStore(
+    subscribeToDarkMode,
+    getDarkModeSnapshot,
+    getServerDarkModeSnapshot
+  );
+  const [darkModeOverride, setDarkModeOverride] = useState<boolean | null>(
+    null
+  );
+  const isDarkMode = darkModeOverride ?? prefersDarkMode;
 
   useEffect(() => {
     if (isDarkMode) {
@@ -24,7 +43,7 @@ export default function Menu() {
   }, [isDarkMode]);
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    setDarkModeOverride(!isDarkMode);
   };
 
   return (
