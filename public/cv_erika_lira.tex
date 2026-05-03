@@ -1,0 +1,133 @@
+% CV em LaTeX - Erika Janine Lira dos Santos
+% Perfil amplo: Software Engineering | Fullstack | Backend | Cloud | DevOps | Data/AI
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[a4paper,margin=1.35cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+\definecolor{accent}{HTML}{2B2B2B}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlist[itemize]{leftmargin=*, topsep=2pt, itemsep=2pt, parsep=0pt}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\role}[4]{
+  \textbf{#1} \hfill #2 \\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+% ===== Header =====
+{\LARGE \textbf{Erika Janine Lira dos Santos}}\\
+\textbf{Software Engineer | Fullstack | Backend | Cloud, DevOps, Data \& AI}\\
+Brasil \;\textbar\; Remoto \;\textbar\; \href{mailto:liraerika00@gmail.com}{liraerika00@gmail.com} \;\textbar\; +55 83 98770-0685\\
+\href{https://github.com/erikalira}{github.com/erikalira} \;\textbar\; \href{https://www.linkedin.com/in/erikalira/}{linkedin.com/in/erikalira}
+
+\section*{Resumo profissional}
+Engenheira de Software com experiência em desenvolvimento fullstack e atuação em aplicações web, backend, APIs, bancos de dados, cloud, DevOps, dados e soluções com inteligência artificial. Experiência em ambiente corporativo de grande escala, contribuindo com evolução de produtos digitais, sustentação de sistemas em produção, resolução de incidentes, automação de entregas, observabilidade, performance, confiabilidade e documentação técnica e arquitetural.
+
+Atuação com tecnologias modernas de desenvolvimento web, backend, APIs, bancos de dados, automação, containers, CI/CD e práticas de observabilidade. Experiência prática com React, Next.js, TypeScript, Node.js, Java, Python, SQL, Docker, Kubernetes, GitHub Actions e ferramentas de qualidade e segurança.
+
+Interesse forte em engenharia de software moderna, arquitetura, qualidade, segurança, automação, sistemas escaláveis, dados, IA aplicada e uso responsável de ferramentas de inteligência artificial para apoiar produtividade, pesquisa técnica e revisão de código sem abrir mão de responsabilidade sobre código em produção.
+
+\section*{Competências técnicas}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Linguagens} & JavaScript, TypeScript, Python, Java, SQL \\
+\textbf{Frontend} & React, Next.js, HTML, CSS, Tailwind, acessibilidade, responsividade, SEO, consumo de APIs REST, interfaces web \\
+\textbf{Backend} & Node.js, NestJS, Java/Spring Boot, Quarkus, Python/Flask, APIs REST, integrações entre serviços, DTOs, autenticação/autorização, arquitetura em camadas \\
+\textbf{Banco de dados} & PostgreSQL, MongoDB, SQL, modelagem relacional, queries, ORMs, diagramas ER, persistência de dados \\
+\textbf{Cloud/DevOps} & Docker, Kubernetes, OpenShift, Kustomize, GHCR, GitHub Actions, Jenkins, CI/CD, Linux, deploy, rollback, noções de SRE \\
+\textbf{Qualidade e segurança} & Testes unitários e automatizados, Code Review, linting, análise estática, CodeQL, pip-audit, Dependency Review, SBOM, Trivy, boas práticas de segurança \\
+\textbf{Observabilidade} & Troubleshooting, análise de logs, monitoramento, incidentes em produção, performance, confiabilidade e melhoria contínua \\
+\textbf{Arquitetura} & C4 Model, documentação técnica, APIs, microsserviços, separação de responsabilidades, manutenibilidade, decisões arquiteturais \\
+\textbf{Dados e IA} & Ciência de Dados em formação, fundamentos de IA, aplicações com reconhecimento facial, integração com serviços de machine learning e análise de dados
+\end{tabularx}
+
+\section*{Experiência profissional}
+
+\role{Engenheira de Software}{Set/2023 -- Atual}{Banco do Brasil}{Tempo integral}
+\begin{itemize}
+  \item Desenvolvimento e evolução de soluções digitais em ambiente corporativo de grande escala, com atuação em aplicações web, serviços, integrações e sustentação em produção.
+  \item Implementação de funcionalidades, correção de incidentes e melhoria contínua de sistemas críticos, com foco em qualidade, estabilidade, performance e experiência do usuário.
+  \item Apoio à sustentação de aplicações em produção, incluindo análise de logs, troubleshooting, monitoramento, investigação de falhas e melhoria de confiabilidade.
+  \item Contribuição em iniciativas de qualidade web, incluindo acessibilidade, responsividade, SEO e boas práticas de experiência digital.
+  \item Participação em práticas de entrega contínua, automação de processos, versionamento, revisão de código e colaboração técnica em squad multidisciplinar.
+  \item Apoio à documentação técnica e arquitetural, utilizando modelos visuais para comunicação entre desenvolvimento, arquitetura e negócio.
+  \item Atuação em ambiente ágil/SAFe, colaborando com times multidisciplinares na entrega, sustentação e evolução de soluções digitais.
+\end{itemize}
+
+\role{Desenvolvedora Full Stack -- Estágio}{Nov/2021 -- Ago/2023}{Synchro -- Solução Fiscal}{Estágio}
+\begin{itemize}
+  \item Desenvolvimento de funcionalidades frontend com React e TypeScript para sistemas corporativos fiscais.
+  \item Integração com backend em Java/Spring Boot e banco de dados corporativo, apoiando fluxos de negócio, manutenção evolutiva e consumo de APIs.
+  \item Participação em correções, testes, entendimento de regras de negócio fiscal e colaboração com time de desenvolvimento em ambiente corporativo.
+  \item Apoio à evolução de sistemas internos com foco em manutenibilidade, qualidade de código e entrega incremental.
+\end{itemize}
+
+\role{Desenvolvedora Full Stack no Laboratório de IA -- Estágio}{Fev/2021 -- Jul/2021}{Dataprev}{Estágio}
+\begin{itemize}
+  \item Desenvolvimento de aplicação web voltada a soluções de reconhecimento facial, validação de identidade e apoio a processos como prova de vida digital.
+  \item Desenvolvimento frontend com React e integração com APIs em Python/Flask para consumo de serviços de reconhecimento facial e processamento de documentos.
+  \item Implementação de funcionalidades, ajustes de interface e suporte à integração com serviços de inteligência artificial em fluxos sensíveis de validação de identidade.
+  \item Atuação em ambiente ágil, colaborando com o time na evolução contínua da aplicação e na integração entre frontend, backend e serviços de IA.
+\end{itemize}
+
+\role{Desenvolvedora Full Stack -- Estágio}{Jun/2020 -- Fev/2021}{LedgerTec}{Estágio}
+\begin{itemize}
+  \item Desenvolvimento de aplicação web com frontend em React e integração com API backend em Node.js para envio, validação e persistência de dados.
+  \item Atuação em fluxos de assinatura digital, geração de documentos, validação de informações e estruturas de dados associadas a blockchain.
+  \item Participação na modelagem inicial do banco de dados com diagramas ER e na definição de fluxos do sistema utilizando draw.io.
+  \item Apoio à construção de funcionalidades de produto desde etapas iniciais, conectando interface, backend, persistência e regras de negócio.
+\end{itemize}
+
+\section*{Projetos relevantes}
+
+\textbf{Python TTS Bot -- Sistema Distribuído, Arquitetura e Operação} \hfill \href{https://github.com/erikalira/python-tts}{github.com/erikalira/python-tts}
+\begin{itemize}
+  \item Sistema distribuído de text-to-speech com bot Discord, aplicação desktop, API HTTP, processamento assíncrono, filas e integração entre componentes independentes.
+  \item Estruturação com separação de responsabilidades e princípios de Clean Architecture, organizando camadas de domínio, aplicação, infraestrutura e apresentação.
+  \item Implementação de práticas de engenharia para produção, incluindo autenticação por token, rate limiting, health checks, readiness checks, limites de payload e contratos explícitos entre serviços.
+  \item Evolução da infraestrutura com Docker, Docker Compose, Kubernetes, Kustomize, OpenTofu, GitHub Actions, publicação de imagens e fluxos de release e rollback.
+  \item Adoção de práticas de qualidade, segurança e operação, incluindo testes automatizados, linting, análise estática, CodeQL, Dependency Review, SBOM, Trivy, observabilidade, documentação técnica e runbooks.
+\end{itemize}
+
+\textbf{Aplicação de Apoio a Diagnóstico Periodontal -- Produto, IA e Arquitetura} \hfill Projeto em concepção
+\begin{itemize}
+  \item Planejamento de MVP para aplicação voltada à compilação de achados clínicos e radiográficos, com sugestão padronizada de diagnóstico na área de periodontia.
+  \item Definição de arquitetura com frontend web, backend para regras de negócio e serviço Python para futura integração com modelos de IA.
+  \item Estruturação inicial considerando validação de qualidade do diagnóstico, benchmark, dados clínicos, interface para apresentação ao cliente e evolução incremental do produto.
+\end{itemize}
+
+\section*{Formação}
+
+\textbf{Graduação em Ciência de Dados} \hfill Em andamento\\
+Ênfase em análise de dados, inteligência artificial, estatística, programação e fundamentos de engenharia de software.
+
+\vspace{0.35em}
+
+\textbf{Graduação em Ciência da Computação} \hfill Em andamento\\
+Ênfase em desenvolvimento de software, algoritmos, arquitetura de sistemas, bancos de dados e computação em nuvem.
+
+\section*{Diferenciais}
+\begin{itemize}
+  \item Perfil generalista em engenharia de software, com visão de produto, frontend, backend, dados, cloud, DevOps, arquitetura e operação.
+  \item Experiência prática com aplicações web, APIs REST, bancos de dados, CI/CD, containers, Kubernetes, observabilidade e sustentação de sistemas em produção.
+  \item Capacidade de transitar entre implementação, troubleshooting, documentação técnica, comunicação arquitetural e melhoria contínua.
+  \item Uso consciente de ferramentas de IA para apoiar produtividade, pesquisa técnica, revisão e aceleração do desenvolvimento, mantendo responsabilidade sobre qualidade, segurança, testes e código em produção.
+  \item Interesse em produtos de alto impacto, sistemas escaláveis, engenharia bem documentada, qualidade técnica e colaboração com times multidisciplinares.
+\end{itemize}
+
+\end{document}

@@ -58,6 +58,9 @@ export default function Menu() {
           <Link href="/#projects">Projects</Link>
         </div>
         <div className="m-2 text-gray-400 hover:text-[#ffc200]">
+          <Link href="/pt/cv">CV</Link>
+        </div>
+        <div className="m-2 text-gray-400 hover:text-[#ffc200]">
           <Link href="/#contact">Contact</Link>
         </div>
         <div className="m-2 text-gray-400 hover:text-[#ffc200]">
