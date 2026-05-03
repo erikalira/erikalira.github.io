@@ -27,7 +27,7 @@ export default function EnglishCvPage() {
             View Portuguese CV
           </Link>
           <Link
-            href="/"
+            href="/en"
             className="inline-flex items-center justify-center border border-gray-900 px-5 py-3 text-sm font-semibold text-gray-950 transition hover:border-[#ffc200] hover:text-[#b88900] dark:border-white dark:text-white dark:hover:border-[#ffc200] dark:hover:text-[#ffc200]"
           >
             Back to portfolio

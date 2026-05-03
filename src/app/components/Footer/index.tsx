@@ -1,47 +1,47 @@
 import Link from "next/link";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaFreeCodeCamp,
-  FaSpotify,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import type { Locale } from "@/app/data/portfolio";
+import { portfolioCopy } from "@/app/data/portfolio";
 
-export default function Footer() {
+export default function Footer({ locale }: { locale: Locale }) {
+  const copy = portfolioCopy[locale];
+
   return (
-    <div id="contact" className="pt-16 text-white">
-      <div className="my-4 text-4xl bg-gray-700 px-4 py-8">
-        Contact
-        <div className="flex gap-2 justify-center">
+    <footer
+      id="contact"
+      className="border-t border-gray-200 px-4 py-12 dark:border-gray-800 md:px-12 lg:px-24"
+    >
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="max-w-2xl space-y-3">
+          <h2 className="text-3xl font-bold text-gray-950 dark:text-white">
+            {copy.contactTitle}
+          </h2>
+          <p className="text-base font-normal leading-7 text-gray-600 dark:text-gray-300">
+            {copy.contactBody}
+          </p>
+        </div>
+
+        <div className="flex gap-3 text-2xl">
           <Link
             target="_blank"
+            rel="noreferrer"
             href="https://www.linkedin.com/in/erikalira/"
             aria-label="LinkedIn"
+            className="text-gray-500 transition hover:text-[#b88900] dark:text-gray-300 dark:hover:text-[#ffc200]"
           >
             <FaLinkedin />
           </Link>
           <Link
             target="_blank"
+            rel="noreferrer"
             href="https://github.com/erikalira"
             aria-label="GitHub"
+            className="text-gray-500 transition hover:text-[#b88900] dark:text-gray-300 dark:hover:text-[#ffc200]"
           >
             <FaGithub />
           </Link>
-          <Link
-            target="_blank"
-            href="https://www.freecodecamp.org/erika"
-            aria-label="FreeCodeCamp"
-          >
-            <FaFreeCodeCamp />
-          </Link>
-          <Link
-            target="_blank"
-            href="https://open.spotify.com/user/12142197717"
-            aria-label="Spotify"
-          >
-            <FaSpotify />
-          </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

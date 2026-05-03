@@ -23,7 +23,7 @@ export default function CvPage() {
         <div className="mb-8 flex flex-col gap-3 border-b border-gray-200 pb-6 dark:border-gray-800 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <Link
-              href="/"
+              href="/pt"
               className="text-sm text-gray-500 hover:text-[#ffc200] dark:text-gray-400"
             >
               Voltar ao portfólio

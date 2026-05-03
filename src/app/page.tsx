@@ -1,17 +1,21 @@
-import Image from "next/image";
-import Menu from "./components/Menu";
-import Highlight from "./components/Highlight";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import { cookies, headers } from "next/headers";
+import { redirect } from "next/navigation";
+import type { Locale } from "@/app/data/portfolio";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="z-10 w-full font-mono lg:flex lg:flex-col font-bold">
-        <Highlight />
-        <Projects />
-        <Footer />
-      </div>
-    </main>
-  );
+function isLocale(value: string | undefined): value is Locale {
+  return value === "pt" || value === "en";
+}
+
+export default async function RootPage() {
+  const cookieStore = await cookies();
+  const cookieLocale = cookieStore.get("NEXT_LOCALE")?.value;
+
+  if (isLocale(cookieLocale)) {
+    redirect(`/${cookieLocale}`);
+  }
+
+  const headerStore = await headers();
+  const acceptedLanguages = headerStore.get("accept-language")?.toLowerCase();
+
+  redirect(acceptedLanguages?.includes("pt") ? "/pt" : "/en");
 }

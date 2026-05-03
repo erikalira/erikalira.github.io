@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Erika Lira",
-  description: "Erika Lira's personal website",
+  description:
+    "Software engineering portfolio focused on fullstack, backend, cloud, DevOps, and applied AI.",
 };
 
 export default function RootLayout({
@@ -16,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <main className="flex min-h-screen flex-col items-center pt-20 bg-white dark:bg-gray-950 text-black dark:text-white">
-          <div className="z-10 w-full font-mono lg:flex lg:flex-col font-bold  max-w-[1440px]">
+        <main className="min-h-screen bg-white pt-20 text-black dark:bg-gray-950 dark:text-white">
+          <div className="w-full">
             <Menu />
             {children}
           </div>

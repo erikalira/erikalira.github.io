@@ -1,78 +1,72 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Emoji from "../../../../public/emoji.webp";
-import { useEffect, useState } from "react";
+import type { Locale } from "@/app/data/portfolio";
+import { portfolioCopy } from "@/app/data/portfolio";
 
-export default function Highlight() {
-  const texts = ["Erika Lira", "Web Dev", "Data Science Student"];
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        setIsVisible(true);
-      }, 500);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [texts.length]);
+export default function Highlight({ locale }: { locale: Locale }) {
+  const copy = portfolioCopy[locale];
 
   return (
-    <div
+    <section
       id="about"
-      className="flex flex-col lg:flex-row m-4 pt-16 lg:px-48 justify-between"
+      className="px-4 pb-14 pt-12 md:px-12 lg:px-24 lg:pb-20 lg:pt-16"
     >
-      <div className="m-4 flex-1">
-        <div className="flex h-full flex-col justify-center gap-6">
-          <div className="md:flex text-4xl items-center">
-            <div className="mr-4 flex items-center min-w-[200px]">
-              Hello, I&apos;m
-            </div>
-            <div
-              className={`text-[#ffc200] flex items-center min-h-[120px] min-w-[200px] transition-opacity duration-500 ${
-                isVisible ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              {texts[currentTextIndex]}
-            </div>
+      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="space-y-7">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#b88900] dark:text-[#ffc200]">
+              {copy.heroEyebrow}
+            </p>
+            <h1 className="max-w-4xl text-4xl font-black leading-tight text-gray-950 dark:text-white md:text-6xl">
+              {copy.heroTitle}
+            </h1>
           </div>
 
-          <p className="max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-300">
-            Software Engineer focused on fullstack development, backend,
-            cloud, DevOps, APIs, CI/CD, and production-ready web applications.
+          <p className="max-w-3xl text-lg font-normal leading-8 text-gray-700 dark:text-gray-200">
+            {copy.heroBody}
           </p>
 
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/#projects"
+              href={`/${locale}#projects`}
               className="inline-flex items-center justify-center bg-[#ffc200] px-5 py-3 text-sm font-semibold text-gray-950 transition hover:bg-[#e0a900]"
             >
-              View projects
+              {copy.primaryCta}
             </Link>
             <Link
-              href="/pt/cv"
-              className="inline-flex items-center justify-center border border-gray-900 px-5 py-3 text-sm font-semibold text-gray-950 transition hover:border-[#ffc200] hover:text-[#b88900] dark:border-white dark:text-white dark:hover:border-[#ffc200] dark:hover:text-[#ffc200]"
+              href="https://github.com/erikalira"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 border border-gray-900 px-5 py-3 text-sm font-semibold text-gray-950 transition hover:border-[#ffc200] hover:text-[#b88900] dark:border-white dark:text-white dark:hover:border-[#ffc200] dark:hover:text-[#ffc200]"
             >
-              View CV
+              <FaGithub aria-hidden="true" />
+              {copy.githubCta}
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/erikalira/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 border border-gray-900 px-5 py-3 text-sm font-semibold text-gray-950 transition hover:border-[#ffc200] hover:text-[#b88900] dark:border-white dark:text-white dark:hover:border-[#ffc200] dark:hover:text-[#ffc200]"
+            >
+              <FaLinkedin aria-hidden="true" />
+              {copy.linkedinCta}
             </Link>
           </div>
         </div>
+
+        <div className="flex justify-center lg:justify-end">
+          <Image
+            src={Emoji}
+            height={360}
+            width={360}
+            alt="Erika Lira"
+            className="h-auto w-full max-w-[280px] md:max-w-[360px]"
+            priority
+          />
+        </div>
       </div>
-      <div className="flex justify-center items-center flex-shrink-0">
-        <Image
-          src={Emoji}
-          height={384}
-          width={384}
-          alt="Picture of the author"
-          className="max-w-[512px] h-full"
-          priority
-        />
-      </div>
-    </div>
+    </section>
   );
 }
