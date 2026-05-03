@@ -3,27 +3,50 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  color-scheme: light;
+
+  --color-canvas: 48 24% 98%;
+  --color-canvas-soft: 45 29% 95%;
+  --color-panel: 0 0% 100%;
+  --color-panel-raised: 42 33% 98%;
+  --color-foreground: 220 26% 10%;
+  --color-muted: 222 9% 42%;
+  --color-border: 220 13% 88%;
+  --color-accent: 45 100% 50%;
+  --color-accent-strong: 40 100% 35%;
+  --color-accent-muted: 45 100% 88%;
+  --color-shadow: 220 38% 22%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  color-scheme: dark;
+
+  --color-canvas: 220 32% 7%;
+  --color-canvas-soft: 220 31% 5%;
+  --color-panel: 220 25% 10%;
+  --color-panel-raised: 219 23% 13%;
+  --color-foreground: 45 35% 96%;
+  --color-muted: 217 13% 72%;
+  --color-border: 218 19% 20%;
+  --color-accent: 45 100% 55%;
+  --color-accent-strong: 45 100% 65%;
+  --color-accent-muted: 45 90% 16%;
+  --color-shadow: 220 55% 3%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  background: hsl(var(--color-canvas));
+  color: hsl(var(--color-foreground));
+}
+
+::selection {
+  background: hsl(var(--color-accent) / 0.32);
+  color: hsl(var(--color-foreground));
 }
 
 @layer utilities {

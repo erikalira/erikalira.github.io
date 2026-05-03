@@ -5,6 +5,21 @@ import Menu from "./components/Menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const themeScript = `
+(() => {
+  try {
+    const storedTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle(
+      "dark",
+      storedTheme ? storedTheme === "dark" : systemPrefersDark
+    );
+  } catch {
+    document.documentElement.classList.remove("dark");
+  }
+})();
+`;
+
 export const metadata: Metadata = {
   title: "Erika Lira",
   description:
@@ -18,8 +33,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={inter.className}>
-        <main className="min-h-screen bg-white pt-20 text-black dark:bg-gray-950 dark:text-white">
+        <main className="min-h-screen bg-app-canvas pt-20 text-foreground transition-colors duration-300">
           <div className="w-full">
             <Menu />
             {children}

@@ -20,15 +20,15 @@ export default function CvPage() {
   return (
     <main className="px-4 py-12 md:px-12 lg:px-24">
       <div className="mx-auto max-w-5xl">
-        <div className="mb-8 flex flex-col gap-3 border-b border-gray-200 pb-6 dark:border-gray-800 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mb-8 flex flex-col gap-3 border-b border-border pb-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <Link
               href="/pt"
-              className="text-sm text-gray-500 hover:text-[#ffc200] dark:text-gray-400"
+              className="text-sm text-muted transition hover:text-accent-strong"
             >
               Voltar ao portfólio
             </Link>
-            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#b88900] dark:text-[#ffc200]">
+            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-accent-strong">
               Currículo web
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function CvPage() {
             <Link
               href="/cv_erika_lira.pdf"
               target="_blank"
-              className="inline-flex w-fit items-center justify-center border border-gray-900 px-4 py-2 text-sm font-semibold text-gray-950 transition hover:border-[#ffc200] hover:text-[#b88900] dark:border-white dark:text-white dark:hover:border-[#ffc200] dark:hover:text-[#ffc200]"
+              className="inline-flex w-fit items-center justify-center border border-border bg-panel-raised/70 px-4 py-2 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent-strong"
             >
               Baixar PDF
             </Link>

@@ -101,7 +101,7 @@ function renderInline(text: string) {
           href={href}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noreferrer" : undefined}
-          className="text-[#b88900] underline decoration-[#ffc200]/50 underline-offset-4 hover:text-[#ffc200] dark:text-[#ffc200]"
+          className="text-accent-strong underline decoration-accent/50 underline-offset-4 hover:text-accent"
         >
           {match[3]}
         </Link>
@@ -130,13 +130,13 @@ export default function CvMarkdown({ markdown }: { markdown: string }) {
   const blocks = parseMarkdown(markdown);
 
   return (
-    <article className="space-y-5 text-base leading-7 text-gray-700 dark:text-gray-200">
+    <article className="space-y-5 text-base leading-7 text-muted">
       {blocks.map((block, index) => {
         if (block.type === "heading" && block.level === 1) {
           return (
             <h1
               key={index}
-              className="text-4xl font-bold leading-tight text-gray-950 dark:text-white md:text-5xl"
+              className="text-4xl font-bold leading-tight text-foreground md:text-5xl"
             >
               {renderInline(block.text)}
             </h1>
@@ -147,7 +147,7 @@ export default function CvMarkdown({ markdown }: { markdown: string }) {
           return (
             <h2
               key={index}
-              className="border-b border-gray-200 pb-2 pt-7 text-2xl font-bold text-gray-950 dark:border-gray-800 dark:text-white"
+              className="border-b border-border pb-2 pt-7 text-2xl font-bold text-foreground"
             >
               {renderInline(block.text)}
             </h2>
@@ -158,7 +158,7 @@ export default function CvMarkdown({ markdown }: { markdown: string }) {
           return (
             <h3
               key={index}
-              className="pt-3 text-xl font-bold text-gray-950 dark:text-white"
+              className="pt-3 text-xl font-bold text-foreground"
             >
               {renderInline(block.text)}
             </h3>

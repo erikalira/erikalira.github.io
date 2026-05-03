@@ -6,7 +6,7 @@ import { portfolioCopy, projectSections } from "@/app/data/portfolio";
 
 const toneClasses: Record<Project["visualTone"], string> = {
   amber:
-    "border-[#ffc200]/50 bg-[#ffc200]/15 text-[#5f4700] dark:text-[#ffe08a]",
+    "border-accent/50 bg-accent-muted/55 text-accent-strong dark:bg-accent-muted/55",
   emerald:
     "border-emerald-400/50 bg-emerald-500/15 text-emerald-900 dark:text-emerald-200",
   cyan: "border-cyan-400/50 bg-cyan-500/15 text-cyan-900 dark:text-cyan-200",
@@ -20,7 +20,7 @@ const toneClasses: Record<Project["visualTone"], string> = {
 function ProjectVisual({ project }: { project: Project }) {
   if (project.image) {
     return (
-      <div className="relative aspect-[16/10] overflow-hidden border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-900">
+      <div className="relative aspect-[16/10] overflow-hidden border border-border bg-panel-raised">
         <Image
           src={project.image}
           alt=""
@@ -72,7 +72,7 @@ function ProjectLinks({
           href={project.githubLink}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 border border-gray-900 px-3 py-2 text-sm font-semibold text-gray-950 transition hover:border-[#ffc200] hover:text-[#b88900] dark:border-white dark:text-white dark:hover:border-[#ffc200] dark:hover:text-[#ffc200]"
+          className="inline-flex items-center gap-2 border border-border bg-panel-raised/70 px-3 py-2 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent-strong"
         >
           <FaGithub aria-hidden="true" />
           {labels.github}
@@ -84,7 +84,7 @@ function ProjectLinks({
           href={project.publicLink}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 bg-[#ffc200] px-3 py-2 text-sm font-semibold text-gray-950 transition hover:bg-[#e0a900]"
+          className="inline-flex items-center gap-2 bg-accent px-3 py-2 text-sm font-semibold text-gray-950 transition hover:bg-accent-strong"
         >
           <FaExternalLinkAlt aria-hidden="true" />
           {labels.public}
@@ -92,7 +92,7 @@ function ProjectLinks({
       ) : null}
 
       {project.privateCase ? (
-        <span className="inline-flex items-center gap-2 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-500 dark:border-gray-700 dark:text-gray-300">
+        <span className="inline-flex items-center gap-2 border border-border bg-panel-raised/60 px-3 py-2 text-sm font-semibold text-muted">
           <FaLock aria-hidden="true" />
           {labels.private}
         </span>
@@ -110,7 +110,7 @@ function ProjectCard({
 }) {
   return (
     <article
-      className={`grid gap-5 border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-950 ${
+      className={`grid gap-5 border border-border bg-panel p-4 shadow-card transition hover:-translate-y-1 hover:bg-panel-raised hover:shadow-card-hover ${
         project.featured ? "lg:grid-cols-[1.1fr_1fr] lg:p-6" : ""
       }`}
     >
@@ -118,24 +118,24 @@ function ProjectCard({
       <div className="flex min-w-0 flex-col justify-between gap-5">
         <div className="space-y-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b88900] dark:text-[#ffc200]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-strong">
               {project.status}
             </p>
-            <h3 className="mt-2 text-2xl font-bold leading-tight text-gray-950 dark:text-white">
+            <h3 className="mt-2 text-2xl font-bold leading-tight text-foreground">
               {project.title}
             </h3>
           </div>
-          <p className="text-base font-normal leading-7 text-gray-700 dark:text-gray-200">
+          <p className="text-base font-normal leading-7 text-muted">
             {project.description}
           </p>
-          <p className="text-sm font-normal leading-6 text-gray-600 dark:text-gray-300">
+          <p className="text-sm font-normal leading-6 text-muted">
             {project.impact}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.stack.map((item) => (
               <span
                 key={item}
-                className="border border-gray-200 px-2.5 py-1 text-xs font-semibold text-gray-600 dark:border-gray-800 dark:text-gray-300"
+                className="border border-border bg-panel-raised/60 px-2.5 py-1 text-xs font-semibold text-muted"
               >
                 {item}
               </span>
@@ -157,10 +157,10 @@ export default function Projects({ locale }: { locale: Locale }) {
         {sections.map((section) => (
           <div key={section.id} className="space-y-6">
             <div className="max-w-3xl space-y-3">
-              <h2 className="text-3xl font-bold leading-tight text-gray-950 dark:text-white md:text-4xl">
+              <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">
                 {section.title}
               </h2>
-              <p className="text-base font-normal leading-7 text-gray-600 dark:text-gray-300">
+              <p className="text-base font-normal leading-7 text-muted">
                 {section.intro}
               </p>
             </div>
