@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Menu from "./components/Menu";
+import type { ReactNode } from "react";
+import Menu from "@/app/components/Menu";
+import { getLocale, localeConfig, locales, sharedMetadata } from "@/app/seo";
+import "../globals.css";
 
 const themeScript = `
 (() => {
@@ -17,19 +18,30 @@ const themeScript = `
 })();
 `;
 
-export const metadata: Metadata = {
-  title: "Erika Lira",
-  description:
-    "Software engineering portfolio focused on fullstack, backend, cloud, DevOps, and applied AI.",
+type LocaleLayoutProps = {
+  children: ReactNode;
+  params: Promise<{
+    locale: string;
+  }>;
 };
 
-export default function RootLayout({
+export const metadata = sharedMetadata;
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  params,
+}: LocaleLayoutProps) {
+  const { locale: routeLocale } = await params;
+  const locale = getLocale(routeLocale);
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={localeConfig[locale].htmlLang} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
