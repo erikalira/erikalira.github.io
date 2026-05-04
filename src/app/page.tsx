@@ -1,21 +1,26 @@
-import { cookies, headers } from "next/headers";
-import { redirect } from "next/navigation";
-import type { Locale } from "@/app/data/portfolio";
+const localeRedirectScript = `
+(() => {
+  const localeMatch = document.cookie.match(/(?:^|; )NEXT_LOCALE=(pt|en)(?:;|$)/);
+  const locale = localeMatch?.[1] ?? (navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en");
 
-function isLocale(value: string | undefined): value is Locale {
-  return value === "pt" || value === "en";
-}
+  window.location.replace("/" + locale);
+})();
+`;
 
-export default async function RootPage() {
-  const cookieStore = await cookies();
-  const cookieLocale = cookieStore.get("NEXT_LOCALE")?.value;
-
-  if (isLocale(cookieLocale)) {
-    redirect(`/${cookieLocale}`);
-  }
-
-  const headerStore = await headers();
-  const acceptedLanguages = headerStore.get("accept-language")?.toLowerCase();
-
-  redirect(acceptedLanguages?.includes("pt") ? "/pt" : "/en");
+export default function RootPage() {
+  return (
+    <>
+      <script dangerouslySetInnerHTML={{ __html: localeRedirectScript }} />
+      <noscript>
+        <main className="flex min-h-screen items-center justify-center gap-4 bg-app-canvas p-6 text-foreground">
+          <a className="font-semibold text-accent-strong" href="/pt">
+            Portugues
+          </a>
+          <a className="font-semibold text-accent-strong" href="/en">
+            English
+          </a>
+        </main>
+      </noscript>
+    </>
+  );
 }

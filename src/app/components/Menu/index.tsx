@@ -4,7 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { LuUser2 } from "react-icons/lu";
+import { LuUser } from "react-icons/lu";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import type { Locale } from "@/app/data/portfolio";
 
@@ -116,7 +116,7 @@ export default function Menu() {
           href={`/${locale}`}
           className="flex items-center gap-2 text-xl font-bold text-foreground transition hover:text-accent-strong"
         >
-          <LuUser2 aria-hidden="true" />
+          <LuUser aria-hidden="true" />
           Erika
         </Link>
 
