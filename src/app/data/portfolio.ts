@@ -123,13 +123,12 @@ export const projectSections: Record<Locale, ProjectSection[]> = {
           description:
             "Case corporativo público em produção, desenvolvido para experiência responsiva, acessível e orientada a conteúdo.",
           impact:
-            "Trabalho com Next.js, TypeScript, SEO, acessibilidade, CMS/Strapi e entrega em ambiente produtivo.",
+            "Trabalho com Next.js, TypeScript, SEO, acessibilidade, CMS e entrega em ambiente produtivo.",
           stack: [
             "Next.js",
             "TypeScript",
             "Accessibility",
             "SEO",
-            "Strapi",
             "Production",
           ],
           status: "Case corporativo público",
@@ -316,13 +315,12 @@ export const projectSections: Record<Locale, ProjectSection[]> = {
           description:
             "Public corporate production case built for a responsive, accessible, content-driven experience.",
           impact:
-            "Work across Next.js, TypeScript, SEO, accessibility, CMS/Strapi, and production delivery.",
+            "Work across Next.js, TypeScript, SEO, accessibility, CMS, and production delivery.",
           stack: [
             "Next.js",
             "TypeScript",
             "Accessibility",
             "SEO",
-            "Strapi",
             "Production",
           ],
           status: "Public corporate case",
