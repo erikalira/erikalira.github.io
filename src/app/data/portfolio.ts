@@ -33,7 +33,7 @@ export type ProjectSection = {
 
 export const portfolioCopy = {
   pt: {
-    heroEyebrow: "Portfólio de engenharia",
+    heroEyebrow: "Portfólio",
     heroTitle: "Software Engineer: Fullstack, Backend, Cloud & DevOps",
     heroBody:
       "Construo produtos web e serviços de backend com atenção a arquitetura, operação, automação e experiências reais de uso. Meu foco atual une cloud, DevOps, IA aplicada e sistemas prontos para evoluir em produção.",
@@ -50,7 +50,7 @@ export const portfolioCopy = {
       "Aberta a conversas sobre backend, cloud, DevOps, IA aplicada e produtos digitais que precisam sair do protótipo e ganhar operação.",
   },
   en: {
-    heroEyebrow: "Engineering portfolio",
+    heroEyebrow: "Portfolio",
     heroTitle: "Software Engineer: Fullstack, Backend, Cloud & DevOps",
     heroBody:
       "I build web products and backend services with care for architecture, operations, automation, and real user workflows. My current focus connects cloud, DevOps, applied AI, and systems that can keep evolving in production.",
@@ -72,7 +72,7 @@ export const projectSections: Record<Locale, ProjectSection[]> = {
   pt: [
     {
       id: "featured",
-      title: "Featured Engineering Projects",
+      title: "Projetos de Engenharia em Destaque",
       intro:
         "Projetos que mostram arquitetura, produto, automação e operação como partes do mesmo sistema.",
       projects: [
