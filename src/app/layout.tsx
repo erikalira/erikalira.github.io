@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Menu from "./components/Menu";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const themeScript = `
 (() => {
@@ -36,7 +33,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={inter.className}>
+      <body>
         <main className="min-h-screen bg-app-canvas pt-20 text-foreground transition-colors duration-300">
           <div className="w-full">
             <Menu />
